@@ -12,16 +12,19 @@
         <maven.compiler.source>22</maven.compiler.source>
         <maven.compiler.target>22</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <maven-surefire.version>3.0.0-M5</maven-surefire.version>
     </properties>
 
     <dependencies>
 
+        <!-- Фреймворк для автоматизации веб-браузеров  -->
         <dependency>
             <groupId>org.seleniumhq.selenium</groupId>
             <artifactId>selenium-java</artifactId>
             <version>4.30.0</version>
         </dependency>
 
+        <!-- Фреймворк для тестирования  -->
         <dependency>
             <groupId>org.testng</groupId>
             <artifactId>testng</artifactId>
@@ -29,6 +32,7 @@
             <scope>test</scope>
         </dependency>
 
+        <!-- Автоматически скачивает и настраивает chromedriver, geckodriver  -->
         <dependency>
             <groupId>io.github.bonigarcia</groupId>
             <artifactId>webdrivermanager</artifactId>
@@ -36,5 +40,28 @@
         </dependency>
 
     </dependencies>
+
+    <build>
+        <plugins>
+            <!-- Генерирует сайт проекта с отчетами  -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-site-plugin</artifactId>
+                <version>3.12.1</version>
+            </plugin>
+            <!-- Выполняет тесты во время сборки (фаза - тест) и генерирует отчет -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>${maven-surefire.version}</version>
+            </plugin>
+            <!-- Генерирует HTML-отчет на основе результатов Surefire  -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-report-plugin</artifactId>
+                <version>${maven-surefire.version}</version>
+            </plugin>
+        </plugins>
+    </build>
 
 </project>
