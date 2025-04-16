@@ -11,6 +11,7 @@ import java.util.List;
 
 public class BasePage {
 
+
     protected WebDriver driver;
 
     public BasePage(WebDriver driver) {
@@ -20,6 +21,7 @@ public class BasePage {
     /**
      * Локатор до названия страницы в средней части страницы
      */
+
     private static final By NAME_PAGE = By.xpath("//h1[@class='text-center']");
 
     /**
@@ -27,6 +29,7 @@ public class BasePage {
      * @param url ссылка в формате строки
      */
     public void openUrl(String url) {
+
         driver.get(url);
     }
 
@@ -71,6 +74,7 @@ public class BasePage {
      * Проверка элемент доступен
      * @return true если доступен
      */
+
     public boolean isElementEnabled(By locator){
         return findElement(locator).isEnabled();
     }
@@ -116,6 +120,7 @@ public class BasePage {
         try {
             return findElement(locator).isDisplayed();
         } catch (Exception ex){
+
             return false;
         }
     }
