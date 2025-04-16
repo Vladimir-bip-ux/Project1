@@ -12,6 +12,7 @@ public class SelectMenuTest extends BaseTest {
 
     @BeforeClass
     public void beforeClass(){
+        System.out.println("Setting up before class in SelectMenuTest.");
         selectMenuPage = new SelectMenuPage(driver);
     }
 

@@ -105,6 +105,9 @@
 - https://mvnrepository.com/ - Репозиторий с зависимостями
 - https://maven.apache.org/download.cgi - Загрузка `Maven`
 - https://www.oracle.com/java/technologies/downloads/ - Загрузка `JDK`
+
+---
+
 - https://github.com/MaxainNN/Liga_internship - Проект с тестами UI и полезными материалами
 - https://learngitbranching.js.org/?locale=ru_RU - тренировка `git`
 

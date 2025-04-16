@@ -10,29 +10,29 @@ public class CheckBoxPage extends BasePage {
         super(driver);
     }
 
-    public static final String URL_TEXT_BOX_PAGE = "https://demoqa.com/checkbox";
+    private static final String URL_TEXT_BOX_PAGE = "https://demoqa.com/checkbox";
 
     /**
      * Локатор до Input элемента чекбокса
      */
-    protected static final String CHECK_BOX_INPUT_XPATH = "//input" +
+    private static final String CHECK_BOX_INPUT_XPATH = "//input" +
             "[@type='checkbox'][following-sibling::span[text()='%s']]";
 
     /**
      * Локатор до чекбокса для нажатия
      */
-    protected static final String CHECK_BOX_XPATH = CHECK_BOX_INPUT_XPATH +
+    private static final String CHECK_BOX_XPATH = CHECK_BOX_INPUT_XPATH +
             "/following-sibling::span[@class='rct-checkbox']";
 
     /**
      * Локатор до пиктограммы "Свернуть/развернуть"
      */
-    public static final String BUTTON_TOGGLE = CHECK_BOX_INPUT_XPATH + "/../preceding-sibling::button[@title='Toggle']";
+    private static final String BUTTON_TOGGLE = CHECK_BOX_INPUT_XPATH + "/../preceding-sibling::button[@title='Toggle']";
 
     /**
      * Локатор для проверки , что строки свернуты/развернуты
      */
-    public static final String LIST_CHECKBOX_XPATH = CHECK_BOX_INPUT_XPATH + "/ancestor::li[contains(@class,'%s')]";
+    private static final String LIST_CHECKBOX_XPATH = CHECK_BOX_INPUT_XPATH + "/ancestor::li[contains(@class,'%s')]";
 
     /**
      * Открыть страницу с элементами "Check Box"
@@ -53,7 +53,7 @@ public class CheckBoxPage extends BasePage {
     /**
      * Переводит чек-бокс в нужное состочние
      * @param checkBoxName - Название чек-бокса
-     * @param state - нужное состочние, true если чек-бокс должен быть активным, false - если нет
+     * @param state нужное состояние, true если чек-бокс должен быть активным, false - если нет
      */
     public void setCheckBox(String checkBoxName, boolean state){
         if (!getCheckBoxState(checkBoxName) == state){
@@ -81,7 +81,7 @@ public class CheckBoxPage extends BasePage {
 
     /**
      * Метод открытия списка чек-боксов нажатием на toggle рядом с чек-боксом для открытия списка
-     * @param checkBoxName - название чек-бокса
+     * @param checkBoxName название чек-бокса
      */
     public void openListCheckBox(String checkBoxName){
         if (!isCheckBoxDisplay(checkBoxName)){

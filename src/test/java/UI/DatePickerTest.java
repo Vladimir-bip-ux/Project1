@@ -12,6 +12,7 @@ public class DatePickerTest extends BaseTest {
 
     @BeforeClass
     public void beforeClass(){
+        System.out.println("Setting up before class in DatePickerTest.");
         datePickerPage = new DatePickerPage(driver);
     }
 

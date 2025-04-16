@@ -11,13 +11,13 @@ public class BaseTest {
 
     @BeforeClass
     public void setupClass(){
-        System.out.println("Setting up before class.");
+        System.out.println("Setting up before class in BaseTest.");
         driver = Browser.createDriver();
     }
 
     @AfterClass
     public void tearDownClass(){
-        System.out.println("Tearing down up before class.");
+        System.out.println("Tearing down after class.");
         if (driver != null) {
             driver.quit();
         }

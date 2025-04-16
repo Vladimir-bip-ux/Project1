@@ -12,6 +12,7 @@ public class CheckBoxTest extends BaseTest {
 
     @BeforeClass
     public void beforeClass(){
+        System.out.println("Setting up before class in CheckBoxTest.");
         checkBoxPage = new CheckBoxPage(driver);
     }
 
