@@ -7,16 +7,18 @@ import org.testng.annotations.BeforeClass;
 
 public class BaseTest {
 
-    public WebDriver driver;
+    protected WebDriver driver;
 
     @BeforeClass
     public void setupClass(){
+        System.out.println("Setting up before class in BaseTest.");
         driver = Browser.createDriver();
     }
 
     @AfterClass
     public void tearDownClass(){
-        if (driver != null){
+        System.out.println("Tearing down after class.");
+        if (driver != null) {
             driver.quit();
         }
     }

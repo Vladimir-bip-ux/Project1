@@ -11,17 +11,18 @@ public class CheckBoxTest extends BaseTest {
     private CheckBoxPage checkBoxPage;
 
     @BeforeClass
-    public void setup(){
+    public void beforeClass(){
+        System.out.println("Setting up before class in CheckBoxTest.");
         checkBoxPage = new CheckBoxPage(driver);
     }
 
-    @Test
+    @Test(description = "Перейти на страницу")
     public void step_01(){
         checkBoxPage.openCheckBoxPage();
-        Assert.assertEquals(checkBoxPage.getPageName(),"Check Box");
+        Assert.assertEquals(checkBoxPage.getPageName(), "Check Box");
     }
 
-    @Test
+    @Test(description = "Развернуть чекбосы 'Home', отметить чекбокс 'Desktop'")
     public void step_02(){
         checkBoxPage.openListCheckBox("Home");
         checkBoxPage.setCheckBox("Desktop",true);

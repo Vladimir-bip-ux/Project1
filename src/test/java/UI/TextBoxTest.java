@@ -21,6 +21,7 @@ public class TextBoxTest {
     public void setup(){
         WebDriverManager.chromedriver().setup();
         ChromeOptions chromeOptions = new ChromeOptions();
+        chromeOptions.addArguments("--headless");
         chromeOptions.setCapability(CapabilityType.PAGE_LOAD_STRATEGY,"eager");
         driver = new ChromeDriver(chromeOptions);
         driver.manage().window().maximize();
@@ -31,8 +32,9 @@ public class TextBoxTest {
         driver.quit();
     }
 
-    @Test
-    public void checkTextBox(){
+    @Test(description = "Перейти на страницу 'Text Box' , внести валидные значения во все поля ," +
+            " нажать на кнопку 'Submit'")
+    public void step_01(){
         driver.get("https://demoqa.com/text-box");
 
         WebElement userNameInput = driver.findElement(By.xpath("//input[@id='userName']"));
@@ -69,10 +71,10 @@ public class TextBoxTest {
         Assert.assertEquals(email,"Email:max@yandex.ru");
     }
 
-    @Test
-    public void checkTitleTextBox(){
+    @Test(description = "Получить title страницы - DemoQA")
+    public void step_02(){
         String pageTitle = driver.getTitle();
+        Assert.assertEquals(pageTitle, "DEMOQA");
         System.out.println("Title : " + pageTitle);
     }
-
 }
