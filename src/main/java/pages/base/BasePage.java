@@ -12,7 +12,7 @@ import java.util.List;
 public class BasePage {
 
 
-    protected WebDriver driver;
+    public WebDriver driver;
 
     public BasePage(WebDriver driver) {
         this.driver = driver;
@@ -22,7 +22,7 @@ public class BasePage {
      * Локатор до названия страницы в средней части страницы
      */
 
-    private static final By NAME_PAGE = By.xpath("//h1[@class='text-center']");
+    public static final By NAME_PAGE = By.xpath("//h1[@class='text-center']");
 
     /**
      * Перейти по url
@@ -133,4 +133,5 @@ public class BasePage {
     public void waitElementIsDisplay(By locator, int second) {
         new WebDriverWait(driver, Duration.ofSeconds(second)).until(d -> isElementDisplay(locator));
     }
+
 }
